@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Edsel Vaflor Portfolio Design System - Navy & Gold Theme */
+
+@layer base {
+  :root {
+    /* Primary Colors - Navy Blue Theme */
+    --background: 0 0% 100%;
+    --foreground: 207 100% 4%;
+    
+    /* Navy Blue Primary */
+    --primary: 207 100% 4%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Gold Accent Colors */
+    --accent: 48 85% 52%;
+    --accent-foreground: 207 100% 4%;
+    --accent-hover: 45 85% 45%;
+    
+    /* Secondary - Dark Gray */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 207 100% 4%;
+    --card-hover: 210 20% 98%;
+    
+    /* Muted Colors */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Border & Input */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 48 85% 52%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(207 100% 4%), hsl(207 85% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(48 85% 52%), hsl(45 85% 45%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(207 100% 4% / 0.1), 0 2px 4px -1px hsl(207 100% 4% / 0.06);
+    --shadow-hover: 0 10px 15px -3px hsl(207 100% 4% / 0.1), 0 4px 6px -2px hsl(207 100% 4% / 0.05);
+    --shadow-glow: 0 0 20px hsl(48 85% 52% / 0.3);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark mode maintains navy theme */
+  .dark {
+    --background: 207 100% 4%;
+    --foreground: 0 0% 100%;
+    
+    --primary: 48 85% 52%;
+    --primary-foreground: 207 100% 4%;
+    
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 100%;
+    --card-hover: 0 0% 18%;
+    
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Button Styles */
+  .btn-hero {
+    @apply bg-gradient-to-r from-accent to-accent-hover text-primary font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-glow hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-accent text-accent font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:bg-accent hover:text-primary;
+  }
+  
+  /* Card Styles */
+  .card-service {
+    @apply bg-card rounded-2xl p-8 shadow-card transition-all duration-300 hover:shadow-hover hover:-translate-y-2;
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Animations */
+  .fade-in-up {
+    @apply animate-fade-in;
+  }
+}
